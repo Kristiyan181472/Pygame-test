@@ -1,6 +1,7 @@
 import pygame, sys
 from settings import *
 #Here we all atributes in the class we use it to define what operations can be done my a variable
+
 class Game:
     def __init__ (self):
         #here we initiate pygame
@@ -12,8 +13,9 @@ class Game:
     def run(self):
           while True:
             for event in pygame.event.get():
-                pygame.quit()
-                sys.exit()
+                if event.type == pygame.QUIT:
+                 pygame.quit()
+                 sys.exit()
 
             self.screen.fill('black')
             pygame.display.update()
